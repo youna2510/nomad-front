@@ -153,6 +153,20 @@
 }
 
 
+/* Hello Users! 화면 */
+#mainScreen {
+  background-color: #ECEEF6; /* 배경색 */
+  background: url('assets/background2.png') no-repeat center center/cover;
+
+  position: relative;
+  width: 100%; /* 화면 전체 너비 */
+  min-height: 100vh; /* 화면 최소 높이 */
+  display: flex;
+  flex-direction: row; /* 사이드바와 콘텐츠를 가로로 배치 */
+  align-items: flex-start; /* 상단 정렬 */
+  padding-bottom: 2rem; /* 하단 여백 추가 */
+}
+
 
 
 
@@ -164,6 +178,8 @@
 
 
   <!-- 메인 콘텐츠 -->
+  <div id="mainScreen" class="screen hidden">
+
   <div class="content">
     <h1>Hello Users! </h1>
     <img src="assets/하트.png" alt="Profile">

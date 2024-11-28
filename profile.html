@@ -9,6 +9,107 @@
   <link href="https://fonts.googleapis.com/css2?family=Poor+Story&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+
+
+
+
+  <style>
+
+/* 프로필 화면-----------------------------------------------*/
+
+.profileScreen {
+  background: url('assets/background2.png') no-repeat center center/cover;
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem;
+  gap: 30px;
+}
+
+/* 제목 스타일 */
+.profileScreen h1 {
+  text-align: center;
+  font-size: 45px;
+  font-weight: 400;
+  font-family: 'Gowun Dodum', 'Poor Story', sans-serif;
+  margin-bottom: 10px;
+  color: #D6D6D6;
+  margin-left:90px;
+}
+
+/* 프로필 화면에서 입력 받는 칸들 */
+.profileScreen form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* label 간 간격 */
+  width: 650px;
+  padding: 20px;
+}
+
+.profileScreen label {
+  font-size: 32px;
+  color: #D6D6D6;
+  font-family: 'Gowun Dodum', 'Poor Story', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 35px;
+  text-align: left;
+}
+
+.profileScreen input, select {
+  padding: 13px; /*프로필 화면에서 입력받는 칸들의 높이*/
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-top: 0px;
+}
+
+.profileScreen input:focus, select:focus {
+  border-color: #4e4e92;
+  outline: none;
+}
+
+.profileScreen select {
+  cursor: pointer;
+}
+
+.profileScreen img {
+  width: 75px;
+  height: 75px;
+  position: absolute;
+  left : 580px;
+  top : 67px;
+  cursor: pointer;
+}
+
+
+/* 완료 버튼 스타일 */
+.submit-btn {
+  background-color: black;
+  color: white;
+  font-size: 16px;
+  font-family: 'Gowun Dodum';
+  padding: 16px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  width: 200px; /* 고정 너비 */
+  margin-left:200px;
+  margin-top:50px;
+}
+
+
+
+
+
+
+
+  </style>
 </head>
 <body>
     <div class="profileScreen">
@@ -42,7 +143,7 @@
 
             <label for="profile-activity">활동 반경</label>
             <input type="text" id="activity" placeholder="활동 반경을 입력해주세요.">
-            <a href="index.html#loginScreen">
+            <a href="loginscreen.html">
                 <button type="button" class="submit-btn">완료</button>
             </a>
               
