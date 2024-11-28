@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NomaCircle</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poor+Story&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anek+Tamil&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">  
+
+  <style>
+    a {
+        text-decoration: none; /* 기본 밑줄 제거 */
+        position: relative;
+    }
+    a::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0px; /* 밑줄을 살짝 아래로 내림 */
+        width: 100%;
+        height: 0.1px; /* 밑줄 두께 */
+        background-color: white; /* 밑줄 색상 */
+    }
+
+
+    
+/* 메인 콘텐츠 스타일 */
+.content {
+  position:absolute;
+  flex: 1;
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.content h1 { /*Hello Users!*/
+  font-size: 7rem;
+  font-weight:450;
+  color: #D3D5DF;
+  margin-bottom:1rem;
+  margin-top:3.5rem;
+  margin-left:-1rem;
+  font-family:'Gowun Dodum';
+}
+
+
+.content p { /*오직 디지털 노마드를 위한 ~ */
+  font-size: 1.8rem;
+  color: #D3D5DF;
+  line-height: 1.5;
+  text-align: left;
+  font-family : 'Gowun Dodum';
+  margin-bottom: 1rem;
+  margin-left:-1rem;
+  margin-top:-0.6rem;
+}
+
+/* 메뉴 아이템 컨테이너 */
+.menu-container {
+  display: flex;
+  justify-content: center;
+  align-items : center;
+  gap: 11rem;
+  margin-top: 10rem;
+  width:100%;
+}
+
+
+.menu-item { /*장소찾기, 네트워킹 박스*/
+  width: 550px;
+  height: 175px;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.9);
+  border-radius: 23px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left; /* 텍스트 왼쪽 정렬 */
+  padding-left: 3rem; /* 왼쪽에 여백 추가 */
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  opacity : 0.8;
+}
+
+
+.menu-item span {
+  font-size: 2rem;
+}
+
+.menu-item p {
+  margin-top: 0.5rem;
+  margin-left:7.5rem;
+  font-size: 2.8rem;
+  font-family: 'Gowun Dodum', 'Poor Story', sans-serif; /* 폰트 패밀리 */
+  color: #333;
+  
+}
+
+.menu-item:hover {
+  transform: translateY(5px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+
+
+
+/* 네트워킹 이미지 위치 및 크기 조절 */
+.networking-image {
+  position: absolute; /* 자유로운 위치 조정을 위해 */
+  top: 20%; /* 상단에서 20% 위치 */
+  left: 60%; /* 왼쪽에서 60% 위치 */
+  width: 100px; /* 이미지 크기 설정 */
+  height: auto; /* 비율 유지 */
+}
+
+/* 장소찾기 이미지 위치 및 크기 조절 (필요하면 추가) */
+.place-image {
+  position: absolute; /* 위치 조정 가능 */
+  top: 20%; /* 상단에서 20% */
+  left: 200rem; /* 왼쪽에서 40% */
+  width: 100px; /* 이미지 크기 */
+  height: auto;
+}
+
+
+.whitelogo-image img {
+  position: absolute; /* 부모를 기준으로 절대 위치 조정 */
+  display: block;
+  width: 200px !important;
+  height: 180px !important;
+  margin-left : -52rem;
+  margin-top:40rem;
+}
+
+
+
+.whitelogo-sidebar img {
+  position: relative; /* 부모를 기준으로 절대 위치 조정 */
+  display: block;
+  width: 150px !important;
+  height: 120px !important;
+  margin-left : 0rem;
+  margin-top:1rem;
+  z-index: 10; 
+}
+
+
+
+
+
+
+
+  </style>
+</head>
+<body>
+
+
+  <!-- 메인 콘텐츠 -->
+  <div class="content">
+    <h1>Hello Users! </h1>
+    <img src="assets/하트.png" alt="Profile">
+    <div class="whitelogo-image">
+      <img src="assets/onlylogowhite.png" alt="Logo">
+    </div>
+    <p class = "description">
+      오직 디지털 노마드만을 위한 최적의 장소 추천부터 네트워킹까지, <br>
+      당신의 업무 외적 고민은 NomaCircle이 대신할게요!
+    </p>
+    <div class="menu-container">
+      <div class="menu-item">  
+        <a href="map.html">
+          <img class="place-image" src = "assets/장소찾기.png" alt="Place">
+          <p class="box">&nbsp;&nbsp;&nbsp;워킹플레이스</p>
+        </a>
+      </div>
+      <div class="menu-item">
+        <a href="networking.html">
+          <img class="networking-image" src = "assets/네트워킹.png" alt="Networking">
+          <p class="box">&nbsp;&nbsp;&nbsp;네트워킹</p>
+        </a>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="app.js"></script>
+</body>
+</html>

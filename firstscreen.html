@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NomaCircle</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poor+Story&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anek+Tamil&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">  
+
+  <style>
+    a {
+        text-decoration: none; /* 기본 밑줄 제거 */
+        position: relative;
+    }
+    a::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0px; /* 밑줄을 살짝 아래로 내림 */
+        width: 100%;
+        height: 0.1px; /* 밑줄 두께 */
+        background-color: white; /* 밑줄 색상 */
+    }
+
+    /* 첫 화면 스타일 */
+    #logoScreen {
+      background: url('assets/background2.png') no-repeat center center/cover;
+      height: 100vh;
+      width: 100%;
+      position: relative; /* 부모 컨테이너는 relative */
+    }
+
+    /* 모든 디지털 노마드의 ~~ */
+    #logoScreen h2 {
+      position: absolute; /* 절대 위치 지정 */
+      left: 545px; /* Figma에서의 X 좌표 */
+      top: 630px; /* Figma에서의 Y 좌표 */
+      transform: translate(-50%, -50%); /* 요소를 중심점 기준으로 조정 */
+      width: 700px; /* Figma에서의 너비 */
+      height: 48px; /* 높이 설정 */
+      font-size: 35px; /* 폰트 크기 */
+      font-family: 'Nanum Gothic Coding', 'Poor Story', sans-serif; /* 폰트 패밀리 */
+      font-weight: 400; /* Regular */
+      color: white;
+      line-height: 1; /* Figma의 줄 간격과 유사하게 */
+      text-align: center; /* 텍스트 가운데 정렬 */
+    }
+
+    #logoScreen h1 {
+      position: absolute; /* 절대 위치 지정 */
+      left: 400px; /* Figma에서의 X 좌표 */
+      top: 730px; /* Figma에서의 Y 좌표 */
+      transform: translate(-50%, -50%); /* 요소를 중심점 기준으로 조정 */
+      width: 921px; /* Figma에서의 너비 */
+      height: 134px; /* 높이 설정 */
+      font-size: 130px; /* 폰트 크기 */
+      font-family: 'Anek Tamil', 'Poor Story', sans-serif; /* 폰트 패밀리 */
+      font-weight: 700; /* Regular */
+      color: white;
+      line-height: 1; /* Figma의 줄 간격과 유사하게 */
+      text-align: center; /* 텍스트 가운데 정렬 */
+    }
+
+    #logoScreen p {
+      position: absolute; /* 절대 위치 지정 */
+      left: 585px; /* Figma에서의 X 좌표 */
+      top: 730px; /* Figma에서의 Y 좌표 */
+      transform: translate(-50%, -50%); /* 요소를 중심점 기준으로 조정 */
+      width: 921px; /* Figma에서의 너비 */
+      height: 134px; /* 높이 설정 */
+      font-size: 110px; /* 폰트 크기 */
+      font-family: 'Barlow', 'Poor Story', sans-serif; /* 폰트 패밀리 */
+      font-weight: 400; /* Regular */
+      color: white;
+      line-height: 1; /* Figma의 줄 간격과 유사하게 */
+      text-align: center; /* 텍스트 가운데 정렬 */
+    }
+
+    .logo {
+      position: absolute; /* 자식 요소를 자유롭게 배치 */
+      top: 45%; /* 화면 높이의 50% */
+      left: 43%; /* 화면 너비의 50% */
+      transform: translate(-100%, -70%); /* 가운데 정렬 */
+      width: 43%; /* 로고 크기 조정 */
+    }
+
+  </style>
+</head>
+<body>
+  <!-- 첫 화면 -->
+  <div id="logoScreen" class="screen">
+    <img src="assets/onlylogowhite.png" alt="Logo" class="logo">
+    <h2>모든 디지털 노마드의 궤적이 만나는 중심,</h2>
+    <h1>Noma</h1>
+    <p>[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CIRCLE]</p>
+  </div>
+
+  <script>
+    // 화면을 클릭했을 때 loginScreen으로 넘어가도록 처리
+    document.getElementById("logoScreen").addEventListener("click", () => {
+      window.location.href = "loginscreen.html";  // 클릭하면 로그인 페이지로 이동
+    });
+  </script>
+</body>
+</html>

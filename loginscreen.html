@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NomaCircle</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poor+Story&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anek+Tamil&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">  
+
+  <style>
+    a {
+        text-decoration: none; /* 기본 밑줄 제거 */
+        position: relative;
+    }
+    a::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0px; /* 밑줄을 살짝 아래로 내림 */
+        width: 100%;
+        height: 0.1px; /* 밑줄 두께 */
+        background-color: white; /* 밑줄 색상 */
+    }
+
+
+    
+/* 로그인 화면 스타일 */
+#loginScreen {
+  position: relative; /* 부모 컨테이너에 상대 위치 */
+  background: url('assets/background2.png') no-repeat center center/cover;
+  flex-direction: column;
+}
+
+#loginScreen::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: 30%; /* 로고 크기 조정 */
+  opacity: 0.2; /* 불투명도 설정 */
+  z-index: 1; /* 배경 위에 위치 */
+}
+
+.login-form-container {
+  position: relative;
+  z-index: 2; /* 폼을 로고 위로 올림 */
+}
+
+
+/* 로그인 글자*/
+#loginScreen h2 {
+  position: relative; /* 절대 위치 지정 */
+  left: 680px; /* Figma에서의 X 좌표 */
+  top: -90px; /* Figma에서의 Y 좌표 */
+  transform: translate(-50%, -50%); /* 요소를 중심점 기준으로 조정 */
+  width: 520px; /* Figma에서의 너비 */
+  height: 48px; /* 높이 설정 */
+  font-size: 60px; /* 폰트 크기 */
+  font-family: 'Gowun Dodum', 'Poor Story', sans-serif; /* 폰트 패밀리 */
+  font-weight: 400; /* Regular */
+  color: white;
+  line-height: 1; /* Figma의 줄 간격과 유사하게 */
+  text-align: center; /* 텍스트 가운데 정렬 */
+}
+
+#loginScreen p {
+  position: relative; /* 절대 위치 지정 */
+  left: 680px; /* Figma에서의 X 좌표 */
+  top: -40px; /* Figma에서의 Y 좌표 */
+  transform: translate(-50%, -50%); /* 요소를 중심점 기준으로 조정 */
+  width: 520px; /* Figma에서의 너비 */
+  height: 48px; /* 높이 설정 */
+  font-size: 15px; /* 폰트 크기 */
+  font-family: 'Gowun Dodum', Arial, Arial; /* 폰트 패밀리 */
+  font-weight: 400; /* Regular */
+  color: white; 
+  line-height: 1; /* Figma의 줄 간격과 유사하게 */
+  text-align: center; /* 텍스트 가운데 정렬 */
+}
+
+/* 로그인 form 스타일 */
+#loginScreen form {
+  display: flex; /* 가로 정렬 */
+  flex-direction: column; /* 기본값 */
+  justify-content: space-between; /* input 간의 간격 조절 */
+  align-items: center; /* 세로 정렬 */
+  gap: 3rem; /* 두 input 박스 사이 간격 */
+  margin-top: 0px;
+  margin-bottom: 0rem; /* 입력칸, 회원가입 버튼과의 간격 */
+}
+
+/* input 박스 스타일 */
+#loginScreen form input {
+  width: 650px; 
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+}
+
+/* 버튼 컨테이너 */
+.login-button-container {
+  flex-direction: row;
+  display: flex;
+  justify-content: center; /* 버튼들을 가운데 정렬 */
+  gap: 1.3rem; /* 버튼 사이 간격 설정 (0.5rem 또는 px 단위) */
+}
+
+.login-button-container button {
+  flex-direction: column;
+  display: flex;
+  padding: 1.1rem 5.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.login-button-container button[type="submit"] {
+  background-color: #000;
+  color: #fff;
+}
+
+.login-button-container button[type="button"] {
+  background-color: #ddd;
+  color: #000;
+}
+
+
+/* form-group 스타일 */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-right: 2rem; /* 양쪽 input 사이의 간격 조정 */
+}
+
+.form-group label {
+  margin-bottom: 0.5rem; /* label과 input 간의 간격 */
+  font-size: 1rem;
+  color: white;
+}
+
+.input-container {
+  display: flex;
+ flex-direction:row; 
+}
+
+
+  </style>
+</head>
+<body>
+
+<!-- 로그인 화면 -->
+    <div id="loginScreen" class="screen hidden">
+    <div class="login-form-container">
+      <h2>로그인</h2>
+      <p>서비스 이용을 위해 로그인 해 주세요 :)</p>
+      <form>
+        <div class="input-container">
+          <div class="form-group">
+            <label for="name">이름</label>
+            <input type="text" id="name" placeholder="이름을 입력하세요.">
+          </div>
+          <div class="form-group">
+            <label for="password">비밀번호</label>
+            <input type="password" id="password" placeholder="비밀번호를 입력하세요.">
+          </div>
+        </div>
+        <div class="login-button-container">
+          <button type="button" class="submit-btn-login">로그인</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+  <script src="app.js"></script>
+  
+</body>
+</html>
