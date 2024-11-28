@@ -1,0 +1,126 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv ="Content-Type"  content="text/html; charset=utf-8">
+        <title>NomaCircle</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Nanum+Gothic&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+        <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=qqfuv0gqve"></script>
+        <!--   <script type="text/javascript" src="./map.js"></script>-->
+        <style>
+            * {
+                font-family: "Gowun Dodum", sans-serif;
+            }
+
+        </style>
+</head>
+<body>
+    <!-- 사이드바 -->
+    <div class="sidebar" style="position: fixed;" >
+        <ul>
+            <li>
+                <a href = "profile.html#profileScreen">
+                    <img src="assets/profile-icon-white.png" alt="Profile">
+                </a>
+            </li>
+            <li>
+                <a href = "index.html#mainScreen">
+                    <img src="assets/home-icon-white.png" alt="Home">
+                </a>
+            </li>
+            <li>
+                <a href="map.html">
+                    <img src="assets/map-icon-white.png" alt="Map">
+                </a>
+            </li>
+            <li>
+                <a href="positionboard.html">
+                    <img src="assets/chat-icon-white.png" alt="Chat">
+                </a>
+            </li>
+            <li>
+                <div class="whitelogo-sidebar">
+                    <img src="assets/onlylogowhite2.png" alt="Logo">
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <!--워크플레이스 탐색-->
+    <div class="workplace-search" style="position: fixed;">
+        <div class="wp-search-window">
+            <div class="wp-search-bar">
+                <img src="assets/searching.png" class="WP-Search" />
+                <input class="wp-search-input" placeholder="근처의 워크플레이스를 검색해보세요." style="position: fixed;" />
+            </div>
+            <div class="wp-search-result" style="position: fixed;">
+                <div class="wp-direction">서강대프라자점</div>
+                <div class="wp-name">스타벅스</div>
+                <div class="wp-open">영업중 ~20:00</div>
+                <div> <img class="wp-image" src="assets/searching.png" /></div>
+                <div class="wp-buttons">
+                    <div class="wp-stars">
+                        <span class="star-grade">0.0</span>
+                        <p class="star" style="font-family: 'Nanum Gothic', sans-serif;">★★★★★</p>
+                    </div>
+                    <div class="wp-reviews">후기 ></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- 지도 -->
+    <div class="map-content" style="z-index: -1;">
+        <div class="map-content" style="z-index: -1;">
+        <div id="map"></div>
+        <script>
+            var mapOptions = {
+                center: new naver.maps.LatLng(37.3595704, 127.105399),
+                zoom: 70
+            };        
+
+            function initMap() {
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(showPosition,defaultPosition);
+                } else {
+                    defaultPosition();
+                }
+            }
+
+            function showPosition(position) {
+                var lat = position.coords.latitude;
+                var lng = position.coords.longitude;
+
+                mapOptions = {
+                    center: new naver.maps.LatLng(lat, lng),
+                    zoom: 70
+                };   
+
+                var map = new naver.maps.Map('map', mapOptions);
+                var marker = new naver.maps.Marker({
+                    position: new naver.maps.LatLng(lat, lng),
+                    map: map
+                });
+
+            }
+
+            function defaultPosition() {
+                var map = new naver.maps.Map('map', mapOptions);
+
+            }
+
+            initMap();
+
+          
+        </script>
+       
+    </div>
+
+</body>
+
+</html>
