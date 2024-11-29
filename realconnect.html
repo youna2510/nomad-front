@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NomaCircle</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poor+Story&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anek+Tamil&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">  
+
+  <style>
+    body {
+      font-family: 'Gowun Dodum', sans-serif; /* 폰트와 대체 폰트 설정 */
+    }
+  
+    a {
+        text-decoration: none; /* 기본 밑줄 제거 */
+        position: relative;
+    }
+
+
+.realconnectScreen {
+  position:absolute;
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  background: url('assets/background2.png') no-repeat center center/cover;
+  position: relative;
+  width: 100%; /* 화면 전체 너비 */
+  min-height: 100vh; /* 화면 최소 높이 */
+  display: flex;
+  flex-direction: column; /* 사이드바와 콘텐츠를 가로로 배치 */
+  align-items: flex-start; /* 상단 정렬 */
+  overflow-x:hidden;
+  overflow-y:hidden;
+}
+
+
+
+
+.realconnect-write-button { /*게시글 작성하기 버튼*/
+  position:relative;
+  padding: 3px 30px;
+  background-color:rgba(250, 247, 247, 0.292);
+  color: white;
+  border: none;
+  font-weight:800;
+  border-radius: 100px;
+  font-size: 61px;
+  cursor: pointer;
+  margin-left:820px;
+  margin-top:70px;
+  font-family : 'Gowun Dodum';
+}
+
+.realconnect-write-button:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+
+.horizontal-line1 {
+  position: absolute; /* 상대 위치 조정 */
+  width: 1330px;
+  height: 1.2px;
+  background-color: white;
+  top: 96px; /* 세로선 위로 이동 */
+  left: 246px; /* 세로선 오른쪽으로 이동 */
+  overflow-x:hidden;
+  overflow-y:hidden;
+  z-index:100;
+}
+
+
+
+
+/* 버튼 스타일 */
+
+.realconnect-tablerow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 18px; /* 적절한 패딩 */ /*익명보드 내용칸 높이*/
+  background-color: rgba(0, 0, 0, 0.4); /* 버튼을 잘 보이게 색상 조정 */
+  border-radius: 3px;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 10px; /* 간격 추가 */
+}
+
+/* 내용 부분 크기 조정 */
+
+.realconnect-rownumber {
+  flex: 0.05;
+  text-align: center;
+  border-right: 2px solid #fff; /* 세로선 추가 */
+  height: 100%; 
+  
+  font-size:28px;
+  font-family: 'Gowun Dodum';
+}
+
+.realconnect-rowcontent {
+  flex: 0.77; /* 너비 조정 */
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  text-align:left;
+  font-size:28px;
+  font-family: 'Gowun Dodum';
+  border-right: 1px solid #fff; /* 세로선 추가 */
+
+}
+
+.realconnect-rowdate {
+  flex: 0.12;
+  text-align: center;
+  z-index:10;
+
+}
+
+
+.nonameboard-tablerow:hover {
+  background-color: rgba(0, 0, 0, 0.53);
+}
+
+
+
+.create-post-container h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.create-post-container label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.create-post-container input,
+.create-post-container textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.submit-button {
+  background-color: #4c4caa;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: #333;
+}
+
+
+
+.cancel-button:hover {
+  background-color: #bbb;
+}
+
+
+
+
+.button {
+  padding: 10px 20px;
+  background-color: rgba(0, 0, 0, 0.25);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+.realconnecttitle h1 { /*익명보드 글자*/
+position: absolute;
+width: 215.4px;
+height: 70px;
+left: 243.88px;
+top: 24px;
+
+font-family: 'Gowun Dodum';
+font-style: normal;
+font-weight: 400;
+font-size: 48px;
+line-height: 70px;
+color: #D3D5DF;
+}
+
+.realconnecttitle img { /*익명보드 이모지*/
+position: absolute;
+width: 94.62px;
+height: 94px;
+left: 121.08px;
+top: 12px;
+}
+
+
+
+.realconnecttitle h2 { /*익명보드 글자*/
+  position: absolute;
+  width: 215.4px;
+  height: 70px;
+  left: 1440px;
+  top: 24px;
+  
+  font-family: 'Gowun Dodum';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 70px;
+  color: #D3D5DF;
+  }
+
+  .realconnect-tablebody {
+  padding: 10px 10px;
+  height: auto;
+  width: 94%;
+  margin-top:85px;
+  margin-left :100px;
+}
+
+
+  </style>
+  
+</head>
+<body>
+
+    <div class="sidebar" style="position: fixed;" >
+        <ul>
+            <li>
+                <a href = "profile.html#profileScreen">
+                    <img src="assets/profile-icon-white.png" alt="Profile">
+                </a>
+            </li>
+            <li>
+                <a href = "main.html">
+                    <img src="assets/home-icon-white.png" alt="Home">
+                </a>
+            </li>
+            <li>
+                <a href="map.html">
+                    <img src="assets/map-icon-white.png" alt="Map">
+                </a>
+            </li>
+            <li>
+                <a href="networking.html">
+                    <img src="assets/chat-icon-white.png" alt="Chat">
+                </a>
+            </li>
+            <li>
+                <div class="whitelogo-sidebar">
+                    <img src="assets/onlylogowhite2.png" alt="Logo">
+                </div>
+            </li>
+        </ul>
+    </div>
+
+
+
+
+  <!-- 포지션보드 화면 -->
+  <div class="realconnectScreen">
+      <div class="realconnecttitle">
+        <img src="assets/리얼커넥트.png" alt="Emoji">
+        <h1>리얼커넥트</h1>
+      </div>
+      <button class="realconnect-write-button">
+        <a href ="realconnect-write.html">+</a></button>
+
+      <div class="horizontal-line1"></div>
+
+
+        
+      <div class="realconnect-tablebody">
+        <button class="realconnect-tablerow" data-id="3">
+          <span class="realconnect-rownumber">3</span>
+          <div class="realconnect-rowcontent">
+            <span>프론트엔드와 백엔드...</span>
+          </div>
+          <span class="realconnect-rowdate">24.03.18</span>
+        </button>
+      </div>
+
+  </div>
+
+
+  
+
+
+  <script>
+    // 게시글 목록을 가져와서 화면에 표시하는 함수
+// 게시글 목록을 가져와서 화면에 표시하는 함수
+async function loadPosts() {
+  try {
+    const response = await fetch('http://127.0.0.1:8000/network/ftf/1/posts/');  // 서버에서 게시글 목록을 가져오는 API 호출
+
+    if (!response.ok) {
+      throw new Error('게시글 목록을 불러오는 데 실패했습니다.');
+    }
+
+    const posts = await response.json();  // JSON 데이터로 변환
+    
+    // 게시글이 있을 경우 화면에 표시
+    const postsContainer = document.querySelector('.realconnect-tablebody');
+    postsContainer.innerHTML = '';  // 기존 내용 초기화
+
+    posts.forEach(post => {
+      const postElement = document.createElement('button');
+      postElement.classList.add('realconnect-tablerow');
+      postElement.setAttribute('data-id', post.id);  // 게시글 id 설정
+
+      // 게시글 내용을 동적으로 추가
+      postElement.innerHTML = `
+        <span class="realconnect-rownumber">${post.id}</span>
+        <div class="realconnect-rowcontent">
+          <span>${post.title}</span>
+        </div>
+        <span class="realconnect-rowdate">${post.date}</span>
+      `;
+
+      // 클릭 이벤트: 게시글을 클릭하면 URL이 바뀌면서 해당 게시글 상세페이지로 이동
+      postElement.addEventListener('click', () => {
+        const postId = post.id;
+        window.location.href = `realconnectdetail.html?id=${postId}`;  // 클릭한 게시글의 id를 URL 파라미터로 전달
+      });
+
+      postsContainer.appendChild(postElement);  // DOM에 게시글 추가
+    });
+  } catch (error) {
+    console.error('게시글 목록 조회 중 오류 발생:', error);
+    alert('게시글 목록을 불러오는 데 문제가 발생했습니다.');
+  }
+}
+
+// 페이지 로드 시 게시글 목록을 불러오기
+window.addEventListener('load', loadPosts);
+
+  </script>
+</body>
+</html>

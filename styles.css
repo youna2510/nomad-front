@@ -100,12 +100,11 @@ body {
   object-fit: cover;
 }
 
-/* 기본적으로 숨김 처리 */
+/* 기본적으로 숨김 처리*/ 
 body.hidden-scroll {
   overflow: hidden; /* 스크롤 방지 */
   height: 100vh; /* 화면 높이를 제한 */
 }
-
 
 body.locked {
   overflow: hidden;
@@ -462,65 +461,8 @@ body.locked {
 
 
 
-/* 포지션보드 관련 -----------------------------------------------------------*/
 
 
-.positionboardScreen {
-  position:absolute;
-  padding: 3rem 2rem;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: flex-start;
-  background: url('assets/background2.png') no-repeat center center/cover;
-  position: relative;
-  width: 100%; /* 화면 전체 너비 */
-  min-height: 100vh; /* 화면 최소 높이 */
-  display: flex;
-  flex-direction: column; /* 사이드바와 콘텐츠를 가로로 배치 */
-  align-items: flex-start; /* 상단 정렬 */
-  overflow-x:hidden;
-  overflow-y:hidden;
-}
-
-.positionboardScreen h1 {
-  position: absolute;
-  width: 214px;
-  height: 70px;
-  left: 240px;
-  top: 38px;
-  
-  font-family: 'Gowun Dodum';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 48px;
-  line-height: 70px;
-  /* identical to box height */
-  
-  color: #D3D5DF;
-}
-
-
-
-
-
-
-.imoji {
-  position:absolute;
-  height: 105px;
-  width:105px;
-  top :20px;
-  left:120px;
-}
-
-.positionboardBackground {
-  position:absolute;
-  height: 800px;
-  width:1700px;
-  top :145px;
-  left:100px;
-  z-index:3;
-}
 
 
 .backend-image {
@@ -868,6 +810,21 @@ body {
   border-radius: 5px;
   font-size: 16px;
   cursor: pointer;
+}
+.submit-btn {
+  background-color: black;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left:230px;
+  width:120px;
+  margin-top:20px;
 }
 
 .submit-button:hover {

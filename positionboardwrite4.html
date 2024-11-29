@@ -175,8 +175,8 @@
   <!-- 포지션보드 화면 -->
   <div class="nonameboardwriteScreen">
       <div class="nonameboardwrite-title">
-        <img src="assets/익명보드.png" alt="Emoji">
-        <h1>익명보드</h1>
+        <img src="assets/포지션보드.png" alt="Emoji">
+        <h1>포지션 보드</h1>
       </div>
       <div class="horizontal-line1"></div>
    </div>
@@ -192,10 +192,11 @@
     </div>
     <!-- 완료 버튼 -->
     <div class="board-submit">
-        <button>완료</button>
+          <button>완료</button>
     </div>
   </div>
   
+
 
 
 
@@ -211,10 +212,10 @@
         return;
       }
     
-      const positionId = 1;  // position_id를 1로 고정
+      const positionId = 4;  // position_id를 1로 고정
     
       try {
-        const response = await fetch(`http://127.0.0.1:8000/network/anonymous/${positionId}/posts/`, { 
+        const response = await fetch(`http://127.0.0.1:8000/network/position/${positionId}/posts/`, { 
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -228,7 +229,7 @@
     
         if (response.ok) {
           alert('게시글이 작성되었습니다.');
-          window.location.href = `noname.html`; // 게시글 작성 후 목록 페이지로 이동
+          window.location.href = `positionboard-creator.html`; // 게시글 작성 후 목록 페이지로 이동
         } else {
           const errorData = await response.json();
           alert(`게시글 작성 실패: ${errorData.message || '알 수 없는 오류'}`);
@@ -238,6 +239,7 @@
         alert(`게시글 작성에 실패했습니다: ${error.message}`);
       }
     });
+
 
 
 

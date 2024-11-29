@@ -211,15 +211,24 @@ async function login(username, password) {
 
         const accessToken = data.access;  // 'access' 필드로 응답받았다고 가정
         const refreshToken = data.refresh;  // 'refresh' 필드로 응답받았다고 가정
-        console.log(localStorage.getItem('accessToken'));  // accessToken이 잘 저장되었는지 확인
-        console.log(localStorage.getItem('refreshToken'));  // refreshToken이 잘 저장되었는지 확인
+        const profileRequired = data.profile_required;  // profile_required 값을 받는다고 가정
 
-        // 로컬 스토리지에 저장
+        // 토큰을 로컬 스토리지에 저장
         localStorage.setItem('accessToken', accessToken);
         localStorage.setItem('refreshToken', refreshToken);
 
-        alert('로그인에 성공했습니다!');
-        window.location.href = 'main.html';  // 로그인 성공 후 main.html로 리디렉션
+        // 로그 출력
+        console.log(localStorage.getItem('accessToken'));  // accessToken이 잘 저장되었는지 확인
+        console.log(localStorage.getItem('refreshToken'));  // refreshToken이 잘 저장되었는지 확인
+        console.log('Profile required:', profileRequired);
+
+        // profile_required 값이 true일 경우 profile.html로 리디렉션
+        if (profileRequired) {
+            window.location.href = 'profile.html';  // profile_required가 true일 때만 profile.html로 이동
+        } else {
+            alert('로그인에 성공했습니다!');
+            window.location.href = 'main.html';  // 기본적으로 main.html로 이동
+        }
     } else {
         const errorData = await response.json();
         console.log('로그인 실패:', errorData);
@@ -230,7 +239,6 @@ async function login(username, password) {
     alert('로그인 중 오류가 발생했습니다.');
   }
 }
-
 
 // 로그인 버튼 클릭 이벤트 처리
 document.querySelector('.submit-btn-login').addEventListener('click', function(event) {

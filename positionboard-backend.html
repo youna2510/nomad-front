@@ -70,7 +70,7 @@
 
       </div>
       <button class="nonameboard-backendwrite-button">
-        <a href ="positionboardwrite.html">+</a></button>
+        <a href ="positionboardwrite2.html">+</a></button>
 
       <div class="horizontal-line1"></div>
 
@@ -92,6 +92,55 @@
   
 
 
-  <script src="app.js"></script>
+  <script>
+    // 게시글 목록을 가져와서 화면에 표시하는 함수
+// 게시글 목록을 가져와서 화면에 표시하는 함수
+async function loadPosts() {
+  try {
+    const response = await fetch('http://127.0.0.1:8000/network/position/2/posts/');  // 서버에서 게시글 목록을 가져오는 API 호출
+
+    if (!response.ok) {
+      throw new Error('게시글 목록을 불러오는 데 실패했습니다.');
+    }
+
+    const posts = await response.json();  // JSON 데이터로 변환
+    
+    // 게시글이 있을 경우 화면에 표시
+    const postsContainer = document.querySelector('.nonameboard-backendtablebody');
+    postsContainer.innerHTML = '';  // 기존 내용 초기화
+
+    posts.forEach(post => {
+      const postElement = document.createElement('button');
+      postElement.classList.add('nonameboard-tablerow');
+      postElement.setAttribute('data-id', post.id);  // 게시글 id 설정
+
+      // 게시글 내용을 동적으로 추가
+      postElement.innerHTML = `
+        <span class="nonameboard-rownumber">${post.id}</span>
+        <div class="nonameboard-rowcontent">
+          <span>${post.title}</span>
+        </div>
+        <span class="nonameboard-rowdate">${post.date}</span>
+      `;
+
+      // 클릭 이벤트: 게시글을 클릭하면 URL이 바뀌면서 해당 게시글 상세페이지로 이동
+      postElement.addEventListener('click', () => {
+        const postId = post.id;
+        window.location.href = `positionboarddetail.html?id=${postId}`;  // 클릭한 게시글의 id를 URL 파라미터로 전달
+      });
+
+      postsContainer.appendChild(postElement);  // DOM에 게시글 추가
+    });
+  } catch (error) {
+    console.error('게시글 목록 조회 중 오류 발생:', error);
+    alert('게시글 목록을 불러오는 데 문제가 발생했습니다.');
+  }
+}
+
+// 페이지 로드 시 게시글 목록을 불러오기
+window.addEventListener('load', loadPosts);
+
+
+  </script>
 </body>
 </html>
